@@ -5,5 +5,5 @@ sudo apt-get update
 sudo apt-get install mono-complete -y
 cd /vagrant
 xbuild /p:Configuration=Release ProvisionService.sln
-cd /ProvisionService/bin/release
+cd /ProvisionService/bin/Release
 mono ProvisionService.exe
