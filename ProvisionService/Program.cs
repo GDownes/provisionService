@@ -14,16 +14,27 @@ namespace ProvisionService
     {
         #region Public Methods and Operators
 
-        public static int Main(string[] args)
+        public static void Main(string[] args)
         {
             var uri = new Uri("http://localhost:7070");
 
-            var host = new NancyHost(uri);
-            host.Start();
+            using (var host = new NancyHost(uri))
+            {
+                host.Start();
 
-            Console.WriteLine("Your application is running on " + uri);
+                Console.WriteLine("Your application is running on " + uri);
 
-            return 0;
+                if (args.Any(s => s.Equals("-d", StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    Thread.Sleep(Timeout.Infinite);
+                }
+                else
+                {
+                    Console.ReadKey();
+                }
+
+                host.Stop();
+            }
         }
 
         #endregion
