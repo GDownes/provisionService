@@ -7,7 +7,5 @@ cd /vagrant
 xbuild /p:Configuration=Release ProvisionService.sln
 sudo apt-get install supervisor -y
 sudo cp /vagrant/provisionService.conf /etc/supervisor/conf.d/
-sudo supervisorctl
-update
-start provisionService
-exit
+sudo supervisorctl update
+sudo supervisorctl start provisionService
