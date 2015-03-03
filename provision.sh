@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get install mono-complete -y
 cd /vagrant
 xbuild /p:Configuration=Release ProvisionService.sln
-sudo apt-get install supervisor
+sudo apt-get install supervisor -y
 sudo cp /vagrant/provisionService.conf /etc/supervisor/conf.d/
 sudo supervisorctl
 update
