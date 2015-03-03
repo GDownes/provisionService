@@ -1,6 +1,8 @@
 ﻿#region
 
 using System;
+using System.Linq;
+using System.Threading;
 
 using Nancy.Hosting.Self;
 
@@ -18,6 +20,9 @@ namespace ProvisionService
 
             var host = new NancyHost(uri);
             host.Start();
+
+            Console.WriteLine("Your application is running on " + uri);
+
             return 0;
         }
 
