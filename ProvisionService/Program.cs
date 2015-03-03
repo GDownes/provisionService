@@ -22,18 +22,18 @@ namespace ProvisionService
             {
                 host.Start();
 
-                //Console.WriteLine("Your application is running on " + uri);
+                Console.WriteLine("Your application is running on " + uri);
 
-                //if (args.Any(s => s.Equals("-d", StringComparison.CurrentCultureIgnoreCase)))
-                //{
-                //    Thread.Sleep(Timeout.Infinite);
-                //}
-                //else
-                //{
-                //    Console.ReadKey();
-                //}
+                if (args.Any(s => s.Equals("-d", StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    Thread.Sleep(Timeout.Infinite);
+                }
+                else
+                {
+                    Console.ReadKey();
+                }
 
-                //host.Stop();
+                host.Stop();
             }
         }
 
