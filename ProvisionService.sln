@@ -12,6 +12,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BA991C
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5A7EE29-C0ED-4C17-8A62-0146FB4CD3D3}"
+	ProjectSection(SolutionItems) = preProject
+		install.bat = install.bat
+		provision.sh = provision.sh
+		provisionService.conf = provisionService.conf
+		Vagrantfile = Vagrantfile
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
