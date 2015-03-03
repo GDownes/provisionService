@@ -7,4 +7,4 @@ cd /vagrant
 xbuild /p:Configuration=Release ProvisionService.sln
 cd ~
 cd /vagrant/ProvisionService/bin/Release
-mono ProvisionService.exe
+mono ProvisionService.exe -d
