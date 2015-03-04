@@ -2,7 +2,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A1
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
 sudo apt-get update
-sudo apt-get install mono-devel supervisor ansible -y
+sudo apt-get install mono-devel supervisor ansible sshpass -y
 xbuild /p:Configuration=Release /vagrant/ProvisionService.sln
 sudo cp /vagrant/provisionService.conf /etc/supervisor/conf.d/
 sudo cp /vagrant/hosts /etc/ansible/
