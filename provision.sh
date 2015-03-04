@@ -38,7 +38,6 @@ sudo yum install mono-devel supervisor nano -y
 cd /vagrant
 xbuild /p:Configuration=Release ProvisionService.sln
 cat /vagrant/provisionService.conf | sudo tee -a /etc/supervisord.conf
-sudo supervisorctl update
 sudo supervisorctl start provisionService
 
 
