@@ -33,7 +33,7 @@
 #cd /vagrant
 #xbuild /p:Configuration=Release ProvisionService.sln
 
-sudo yum install epel-release - y
+sudo yum install epel-release -y
 sudo yum install mono-devel supervisor -y
 cd /vagrant
 xbuild /p:Configuration=Release ProvisionService.sln
