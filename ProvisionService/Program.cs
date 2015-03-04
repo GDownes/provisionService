@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Threading;
 
+using Nancy;
 using Nancy.Hosting.Self;
 
 #endregion
@@ -18,7 +19,7 @@ namespace ProvisionService
         {
             var uri = new Uri("http://localhost:7070");
 
-            using (var host = new NancyHost(uri))
+            using (var host = new NancyHost(uri, new DefaultNancyBootstrapper(), new HostConfiguration { AllowChunkedEncoding = true }))
             {
                 host.Start();
 
