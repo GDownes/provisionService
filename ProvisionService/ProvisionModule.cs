@@ -14,27 +14,8 @@ namespace ProvisionService
 
             this.Get["/kueue"] = _ =>
             {
-                new Process { StartInfo = new ProcessStartInfo("ansible kueue -m ping") }.Start();
+                new Process { StartInfo = new ProcessStartInfo("ansible", "kueue -m ping") }.Start();
                 return "Started development kueue deployment";
-            };
-
-            this.Get["/stream"] = _ =>
-            {
-                var response = new Response();
-                response.Headers.Add("Transfer-Encoding", "Chunked");
-                response.ContentType = "text/plain";
-                response.Contents = s =>
-                {
-                    byte[] bytes = Encoding.UTF8.GetBytes("Hello World\n");
-                    for (int i = 0; i < 10; ++i)
-                    {
-                        s.Write(bytes, 0, bytes.Length);
-                        s.Flush();
-                        Thread.Sleep(2000);
-                    }
-                };
-
-                return response;
             };
         }
     }
