@@ -34,8 +34,11 @@
 #xbuild /p:Configuration=Release ProvisionService.sln
 
 sudo yum install epel-release -y
-sudo yum install mono-devel supervisor -y
+sudo yum install mono-devel supervisor nano -y
 cd /vagrant
 xbuild /p:Configuration=Release ProvisionService.sln
-sudo supervisorctl -c provisionService.conf start provisionService
+cat /vagrant/provisionService.conf | sudo tee -a /etc/supervisord.conf
+sudo supervisorctl update
+sudo supervisorctl start provisionService
+
 
