@@ -2,12 +2,9 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3FA7E0328081BFF6A1
 echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin.list
 echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin.list
 sudo apt-get update
-sudo apt-get install mono-devel -y
-cd /vagrant
-xbuild /p:Configuration=Release ProvisionService.sln
-sudo apt-get install supervisor -y
+sudo apt-get install mono-devel supervisor -y
+xbuild /p:Configuration=Release /vagrant/ProvisionService.sln
 sudo cp /vagrant/provisionService.conf /etc/supervisor/conf.d/
 sudo supervisorctl update
-sudo supervisorctl start provisionService
 
 
