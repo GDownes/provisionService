@@ -1,0 +1,5 @@
+---
+- hosts: kueue
+  tasks:
+  - name: Add text to file
+    file: path=/created/hello state=directory
