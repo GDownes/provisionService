@@ -6,6 +6,5 @@ sudo apt-get install mono-devel supervisor ansible sshpass -y
 xbuild /p:Configuration=Release /vagrant/ProvisionService.sln
 sudo cp /vagrant/provisionService.conf /etc/supervisor/conf.d/
 sudo cp /vagrant/hosts /etc/ansible/
+sudo cp /vagrant/ansible.cfg /etc/ansible/
 sudo supervisorctl update
-
-
