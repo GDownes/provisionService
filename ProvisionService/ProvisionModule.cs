@@ -12,7 +12,7 @@ namespace ProvisionService
 
             this.Get["/kueue"] = _ =>
             {
-                new Process { StartInfo = new ProcessStartInfo("ansible-playbook") { Arguments = "/vagrant/deploy-kueue-playbook.yml -vvvv" } }.Start();
+                new Process { StartInfo = new ProcessStartInfo("ansible-playbook") { Arguments = "/vagrant/deploy-kueue-playbook.yml" } }.Start();
                 return "Started development kueue deployment";
             };
         }
