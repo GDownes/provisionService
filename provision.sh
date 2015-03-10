@@ -4,7 +4,7 @@ echo "deb http://download.mono-project.com/repo/debian wheezy-libtiff-compat mai
 sudo apt-get update
 sudo apt-get install mono-devel supervisor ansible sshpass -y
 xbuild /p:Configuration=Release /vagrant/ProvisionService.sln
-sudo cp /vagrant/provisionService/bin/Release/ /data/provisionService
+sudo mkdir /data &&  sudo cp /vagrant/provisionService/bin/Release /data/provisionService/ -R
 sudo cp /vagrant/provisionService.conf /etc/supervisor/conf.d/
 sudo cp /vagrant/hosts /etc/ansible/
 sudo cp /vagrant/ansible.cfg /etc/ansible/
