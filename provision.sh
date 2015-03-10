@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get install mono-devel supervisor ansible sshpass -y
 xbuild /p:Configuration=Release /vagrant/ProvisionService.sln
 sudo mkdir /data &&  sudo cp /vagrant/provisionService/bin/Release /data/provisionService/ -R
-sudo mkdir /data/provisionService/playbook &&  sudo cp /vagrant/playbook /data/provisionService/playbook/ -R
+sudo mkdir /data/provisionService/playbook &&  sudo cp /vagrant/playbook /data/provisionService/ -R
 sudo cp /vagrant/config/provisionService.conf /etc/supervisor/conf.d/
 sudo cp /vagrant/config/hosts /etc/ansible/
 sudo cp /vagrant/config/ansible.cfg /etc/ansible/
